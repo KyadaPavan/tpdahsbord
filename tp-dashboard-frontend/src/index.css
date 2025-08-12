@@ -1,0 +1,856 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap'); */
+
+
+
+@layer base {
+
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: inherit;
+  }
+}
+
+.bg-radial {
+  background: radial-gradient(circle, #250A47, #3B2774, #743E7D);
+}
+
+::selection {
+  background-color: #3b158a;
+  color: whitesmoke;
+}
+
+
+@font-face {
+  font-family: "Poppins";
+  src: url("./assets/fonts/Poppins-Thin.ttf") format("truetype");
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("./assets/fonts/Poppins-ThinItalic.ttf") format("truetype");
+  font-weight: 100;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("./assets/fonts/Poppins-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("./assets/fonts/Poppins-LightItalic.ttf") format("truetype");
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("./assets/fonts/Poppins-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("./assets/fonts/Poppins-Italic.ttf") format("truetype");
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("./assets/fonts/Poppins-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("./assets/fonts/Poppins-MediumItalic.ttf") format("truetype");
+  font-weight: 500;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("./assets/fonts/Poppins-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("./assets/fonts/Poppins-SemiBoldItalic.ttf") format("truetype");
+  font-weight: 600;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("./assets/fonts/Poppins-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("./assets/fonts/Poppins-BoldItalic.ttf") format("truetype");
+  font-weight: 700;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("./assets/fonts/Poppins-ExtraBold.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("./assets/fonts/Poppins-ExtraBoldItalic.ttf") format("truetype");
+  font-weight: 800;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("./assets/fonts/Poppins-Black.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("./assets/fonts/Poppins-BlackItalic.ttf") format("truetype");
+  font-weight: 900;
+  font-style: italic;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
+}
+
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.glass-effect {
+  background: linear-gradient(135deg,
+      rgba(125, 61, 249, 0.4),
+      rgba(248, 247, 252, 0.3));
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  color: #b28bff;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+@keyframes dash {
+  0% {
+    stroke-dashoffset: 500;
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+.animate-line path {
+  animation: dash 2s linear infinite;
+  animation-delay: 2s;
+}
+
+.shine {
+  position: relative;
+  overflow: hidden;
+}
+
+.shine::before {
+  content: '';
+  position: absolute;
+  top: -100%;
+  left: -100%;
+  width: 400%;
+  height: 400%;
+  background: linear-gradient(45deg, rgba(255, 255, 255, 0) 40%, rgba(255, 255, 255, 0.5) 50%, rgba(255, 255, 255, 0) 60%);
+  transform: translateX(0) translateY(0);
+  animation: shine 3s infinite;
+}
+
+@keyframes shine {
+  0% {
+    transform: translateX(-100%) translateY(-100%);
+  }
+
+  100% {
+    transform: translateX(100%) translateY(100%);
+  }
+}
+
+
+
+.line-through {
+  text-decoration: line-through;
+}
+
+.svg-path {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: draw 4s linear infinite;
+}
+
+@keyframes draw {
+  0% {
+    stroke-dashoffset: 1000;
+  }
+
+  50% {
+    stroke-dashoffset: 0;
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+.animate-svg {
+  animation: draw 4s linear infinite, pause 2s linear infinite;
+}
+
+@keyframes pause {
+
+  0%,
+  100% {
+    animation-play-state: paused;
+  }
+
+  50% {
+    animation-play-state: running;
+  }
+}
+
+.text-stroke {
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke-color: white;
+  -webkit-text-stroke-width: 1px;
+}
+
+
+.moving-slider-container {
+  max-width: 1520px;
+  margin: 0 auto;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+
+
+.multiStepForm {
+  background-color: whitesmoke;
+  width: min(100%, 1000px);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  height: min(90%, 700px);
+  box-shadow: 10px 10px 80px -10px rgba(0, 0, 0, 0.103);
+  overflow: hidden;
+}
+
+.multiStepForm .steps {
+  padding: 3rem 2rem;
+  border-radius: inherit;
+  background: url("/Form image 2.jpg") no-repeat center / cover;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  overflow: auto;
+}
+
+.multiStepForm .content {
+  padding: 4rem 2rem 0;
+  max-width: 600px;
+  width: 100%;
+  justify-self: center;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  gap: 2rem;
+}
+
+.multiStepForm .content .step__component {
+  flex: 1;
+  overflow: auto;
+}
+
+.multiStepForm .content .btns {
+  display: flex;
+  margin-top: auto;
+}
+
+.multiStepForm .content .btns .goBack:hover {
+  color: hsl(213, 96%, 18%);
+}
+
+.multiStepForm .content .btns button:not(.goBack) {
+  color: hsl(0, 0%, 100%);
+  margin-left: auto;
+  font-weight: 400;
+}
+
+.multiStepForm .content .btns button:not(.goBack).next {
+  background-color: #8B39A5;
+}
+
+.multiStepForm .content .btns button:not(.goBack).submit {
+  background-color: #8B39A5;
+}
+
+.step {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  cursor: pointer;
+  height: max-content;
+}
+
+.step .index {
+  width: 2.5rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: #E8D8FF;
+  border: 1px solid;
+  transition: all 0.2s ease-in-out;
+}
+
+.step.active .index {
+  border: 2px solid;
+  background-color: #E8D8FF;
+  color: hsl(213, 96%, 18%);
+  border-color: #5d52a0;
+}
+
+.step .title p {
+  color: hsl(229, 24%, 87%);
+  margin-bottom: 0.25rem;
+  font-size: 0.9rem;
+}
+
+.step .title h3 {
+  color: hsl(0, 0%, 100%);
+  font-size: 1rem;
+}
+
+.form>p,
+.summary>p {
+  margin-bottom: 2.5rem;
+}
+
+@media (max-width: 1000px) {
+  .multiStepForm {
+    grid-template-columns: 270px 1fr;
+    padding: 0.5rem;
+  }
+
+  .multiStepForm .steps {
+    padding: 2rem 1rem;
+  }
+
+  .multiStepForm .content {
+    padding: 4rem 2rem 0;
+
+  }
+}
+
+@media (max-width: 800px) {
+  .multiStepForm {
+    grid-template-columns: 1fr;
+    height: 100%;
+    padding: 0;
+    border-radius: 0;
+    position: relative;
+    isolation: isolate;
+    border-radius: 15px;
+  }
+
+  .multiStepForm .steps {
+    padding: 2rem 1rem;
+    flex-direction: row;
+    background-image: url("/Form image 2 mobile.jpg");
+    position: absolute;
+    width: 100%;
+    top: 0;
+    height: 16rem;
+    z-index: -1;
+  }
+
+  .multiStepForm .steps .step:first-child {
+    margin-left: auto;
+  }
+
+  .multiStepForm .steps .step:last-child {
+    margin-right: auto;
+  }
+
+  .multiStepForm .steps .step *:not(.index) {
+    display: none;
+  }
+
+  .multiStepForm .content {
+    margin-top: 8rem;
+    padding: 0;
+  }
+
+  .multiStepForm .content .step__component {
+    padding: 4rem 2rem 0;
+    margin-inline: 1rem;
+    background-color: hsl(0, 0%, 100%);
+    border-radius: 1rem;
+    flex: initial;
+    box-shadow: 10px 10px 80px -10px rgba(0, 0, 0, 0.103);
+  }
+
+  .multiStepForm .content .btns {
+
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .multiStepForm .content .step__component {
+    margin-inline: 0.5rem;
+    padding: 2rem 1rem 0;
+  }
+}
+
+.success {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100%;
+}
+
+.success img {
+  margin-bottom: 2rem;
+}
+
+.plans {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.plans .plan input[type="radio"] {
+  display: none;
+}
+
+.plans .plan input[type="radio"]:checked~label {
+  background-color: hsl(217, 100%, 97%);
+  border-color: hsl(243, 100%, 62%);
+}
+
+.plans .plan label {
+  padding: 1rem;
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid hsl(229, 24%, 87%);
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.plans .plan label:hover,
+.plans .plan label:focus {
+  border-color: hsl(243, 100%, 62%);
+  outline: none;
+}
+
+.plans .plan label img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  margin-bottom: 4rem;
+}
+
+.plans .plan label h4 {
+  margin-top: auto;
+  text-transform: capitalize;
+}
+
+.plans .plan label p {
+  font-size: 0.9rem;
+}
+
+.plans .plan label p:nth-child(3) {
+  color: hsl(213, 96%, 18%);
+  font-weight: 500;
+}
+
+.billing {
+  background-color: hsl(217, 100%, 97%);
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  border-radius: 0.5rem;
+}
+
+@media (max-width: 800px) {
+  .plans {
+    grid-template-columns: 1fr;
+  }
+
+  .plans .plan label img {
+    margin-bottom: 0;
+  }
+
+  .plans .plan label {
+    flex-direction: row;
+    gap: 1rem;
+  }
+}
+
+.toggle {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.toggle input[type="checkbox"] {
+  display: none;
+}
+
+.toggle h5:not(.active) {
+  color: hsl(231, 11%, 63%);
+}
+
+.toggle input[type="checkbox"]+label {
+  --padding: 0.25em;
+  --width: 3rem;
+  width: var(--width);
+  aspect-ratio: 2;
+  display: block;
+  background-color: hsl(213, 96%, 18%);
+  border-radius: 100vmax;
+  position: relative;
+  cursor: pointer;
+}
+
+.toggle input[type="checkbox"]+label::after {
+  content: "";
+  position: absolute;
+  background-color: hsl(0, 0%, 100%);
+  top: var(--padding);
+  bottom: var(--padding);
+  left: var(--padding);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  transition: all 0.3s ease-in-out;
+}
+
+.toggle input[type="checkbox"]:checked+label::after {
+  translate: calc(var(--width) - 100% - var(--padding) * 2);
+}
+
+.addons {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.addon {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 1.5rem;
+  border: 1px solid hsl(229, 24%, 87%);
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.addon:hover,
+.addon:focus {
+  border-color: hsl(243, 100%, 62%);
+}
+
+.addon.active {
+  background-color: hsl(217, 100%, 97%);
+  border-color: hsl(243, 100%, 62%);
+}
+
+.addon .price {
+  margin-left: auto;
+  font-weight: 500;
+  color: hsl(243, 100%, 62%);
+}
+
+.addon label {
+  cursor: pointer;
+}
+
+.addon input[type="checkbox"] {
+  accent-color: hsl(243, 100%, 62%);
+  width: 1.2rem;
+  aspect-ratio: 1;
+  cursor: pointer;
+  pointer-events: none;
+  flex-shrink: 0;
+}
+
+.summary__details {
+  background-color: #f0e5ff54;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.summary__details.summary__addons .summary__detail.main {
+  border-bottom: 1px solid hsl(229, 24%, 87%);
+  padding-bottom: 2rem;
+}
+
+.summary__details .summary__detail {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.summary__details .summary__detail h3 {
+  text-transform: capitalize;
+  font-weight: 500;
+}
+
+.summary__details .summary__detail button {
+  padding: 0;
+  font-weight: 400;
+  text-decoration: underline;
+}
+
+.summary__details .summary__detail button:hover {
+  color: hsl(243, 100%, 62%);
+}
+
+.summary__details .summary__detail .price {
+  color: hsl(213, 96%, 18%);
+  font-weight: 500;
+}
+
+.summary__details .summary__detail.main .price {
+  font-weight: 800;
+  font-size: 1.1rem;
+}
+
+.summary__total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-inline: 2rem;
+}
+
+.summary__total .price {
+  color: hsl(243, 100%, 62%);
+  font-weight: 800;
+  font-size: 1.3rem;
+}
+
+@media (max-width: 800px) {
+  .summary__details {
+    padding: 2rem 1rem;
+  }
+
+  .summary__total {
+    padding-inline: 1rem;
+  }
+}
+
+button {
+  border: none;
+  padding: 0.6rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  font-family: inherit;
+  font-size: 1rem;
+  cursor: pointer;
+  background: none;
+  color: hsl(231, 11%, 63%);
+  transition: filter 0.2s ease-in-out;
+}
+
+button:hover {
+  filter: brightness(1.5);
+}
+
+.custom__scrollbar::-webkit-scrollbar {
+  width: 0.4rem;
+}
+
+.custom__scrollbar::-webkit-scrollbar-track {
+  background-color: hsl(229, 24%, 87%);
+}
+
+.custom__scrollbar::-webkit-scrollbar-thumb {
+  background-color: hsl(231, 11%, 63%);
+}
+
+@media (max-width: 450px) {
+  :root {
+    font-size: clamp(5px, 4vw, 15px);
+  }
+}
+
+.sr-only {
+  opacity: 0;
+  position: absolute;
+  transform: translateX(-99999999px);
+}
+
+.input__group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.input__group>* {
+  font-weight: 400;
+  font-family: inherit;
+  color: hsl(213, 96%, 18%);
+}
+
+.input__group label {
+  margin-left: 0.25rem;
+  font-weight: 500;
+}
+
+.input__group input {
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 1px solid hsl(229, 24%, 87%);
+  border-radius: 0.5rem;
+  background-color: hsl(231, 100%, 99%);
+  outline: none;
+  font-weight: 500;
+}
+
+.input__group input::placeholder {
+  color: hsl(231, 11%, 63%);
+}
+
+.input__group input:focus {
+  border-color: hsl(243, 100%, 62%);
+}
+
+.input__group:has(.error) input {
+  border-color: rgb(216, 32, 32);
+}
+
+.input__group .error {
+  position: absolute;
+  font-weight: 500;
+  right: 0;
+  font-size: 0.8rem;
+  color: rgb(216, 32, 32);
+  margin-left: 0.25rem;
+}
+
+@media (max-width: 800px) {
+  .container {
+    padding: 0;
+  }
+}
+
+.ribbon {
+  position: absolute;
+  left: -28px;
+  top: -28px;
+  z-index: 1;
+  overflow: hidden;
+  width: 75px;
+  height: 75px;
+  text-align: left;
+  font-family: "Anton", sans-serif;
+  font-weight: 400;
+}
+
+.ribbon span {
+  font-size: 15px;
+  color: #FFF;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 20px;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  width: 100px;
+  display: block;
+  background: linear-gradient(to right, #250A47, #743E7D);
+  box-shadow: 0 3px 10px -5px rgba(0, 0, 0, 1);
+  position: absolute;
+  top: 19px;
+  left: -21px;
+}
+
+.ribbon span::before {
+  content: "";
+  position: absolute;
+  left: 0px;
+  top: 100%;
+  z-index: -1;
+  border-left: 3px solid #250A47;
+  border-right: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  border-top: 3px solid #250A47;
+}
+
+.ribbon span::after {
+  content: "";
+  position: absolute;
+  right: 0px;
+  top: 100%;
+  z-index: -1;
+  border-left: 3px solid transparent;
+  border-right: 3px solid #743E7D;
+  border-bottom: 3px solid transparent;
+  border-top: 3px solid #743E7D;
+}
